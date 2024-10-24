@@ -1,45 +1,25 @@
 #include <bits/stdc++.h>
-using namespace std;
 
+using namespace std;
 double func(double x){
-    double f = tan(x); //Ввод функции
+    double f = x*x*x*x; //������ �������
     return f;
 }
-
 int main()
-{double h = 1e-5; //Заданная погрешность
+{double h = 0.00001;
 int flag = 1;
-int fl =0;
+string str;
 
-for (long double i=-5.0;i<0.0;i+=0.1) { //Проверка четности
-    
+for (long double i=-5;i<=5;i+=0.1) {
     if (h<fabs(func(i)-func(-i))){
         flag=0;}
 }
-
 if (flag==1){
-    fl==1;
-}
-else{
-    flag=2;
-}
-
-for (long double i=-5;i<0;i+=0.1) { //Проверка нечетности
-    if (h<fabs(func(i)+func(-i))){
-        flag=0;}
-}
-string str;
-
-if (fl==1){
-    str = "Chet";
+    str = "Yes";
         }
-else if (flag==2){
-    str = "No chet";
-}
 else{
-    str = "General";
+    str = "No";
 }
 cout<<str;
-
     return 0;
 }
